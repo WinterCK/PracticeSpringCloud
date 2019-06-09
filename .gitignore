@@ -13,6 +13,7 @@ buildNumber.properties
 # eclipse
 .metadata/
 .recommenders/
+RemoteSystemsTempFiles/
 
 # mine
 paascloud-master/
