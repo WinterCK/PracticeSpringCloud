@@ -14,6 +14,9 @@ buildNumber.properties
 .metadata/
 .recommenders/
 
+# mine
+paascloud-master/
+
 # Compiled class file
 *.class
 
