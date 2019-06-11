@@ -1,0 +1,27 @@
+server:
+  port: 8761
+
+# 高可用的服务注册中心，有peer1 和peer2  注意端口和defaultZone
+#peer1 和peer2 互相注册 当有新的服务进来，也会进到两个里
+#启动eureka-server：
+#java -jar eureka-server-0.0.1-SNAPSHOT.jar - -spring.profiles.active=peer1
+#java -jar eureka-server-0.0.1-SNAPSHOT.jar - -spring.profiles.active=peer2
+
+#启动service-hi:
+#java -jar service-hi-0.0.1-SNAPSHOT.jar
+
+spring: 
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8769/eureka/
+      
+#心跳  
+  server: 
+    enableSelfPreservation: true
+#后者也可以设置Server触发自我保护机制的临界值，eureka.server.renewal-percent-threshold = 0.85
+    renewalPercentThreshold: 0.49
+    peer-node-read-timeout-ms: 1000

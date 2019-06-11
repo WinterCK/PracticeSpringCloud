@@ -8,4 +8,10 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://peer1:8761/eureka/
+# actuator 2.x 以后endpoints 全部在/actuator下，可以通过management.endpoints.web.base-path修改    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
