@@ -18,6 +18,7 @@ RemoteSystemsTempFiles
 
 # mine
 paascloud-master/
+fail-use/
 
 # Compiled class file
 *.class
